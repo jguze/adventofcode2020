@@ -71,7 +71,7 @@ fn is_attempt_valid_p2(p_attempt: &PasswordAttempt) -> bool {
 }
 
 pub fn part1() {
-    let file = File::open("inputs/day2/part1.txt").unwrap();
+    let file = File::open("inputs/day2/input.txt").unwrap();
     let reader = BufReader::new(file);
 
     let mut valid_pwds = 0;
@@ -87,7 +87,7 @@ pub fn part1() {
 }
 
 pub fn part2() {
-    let file = File::open("inputs/day2/part2.txt").unwrap();
+    let file = File::open("inputs/day2/input.txt").unwrap();
     let reader = BufReader::new(file);
 
     let mut valid_pwds = 0;
