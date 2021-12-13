@@ -1,5 +1,6 @@
 mod days;
 use days::*;
+use std::time::Instant;
 
 extern crate clap;
 use clap::{App, Arg};
@@ -14,7 +15,10 @@ fn run_part(part_fn_vec: Vec<fn()>, part: &str) {
     }
 
     println!("Part {}", part_num);
+    let now = Instant::now();
+
     part_fn_vec[part_num - 1]();
+    println!("Elapsed: {:.2?}", now.elapsed());
 }
 
 fn main() {
@@ -62,6 +66,9 @@ fn main() {
         }
         "6" => {
             run_part(vec![day6::part1, day6::part2], part);
+        }
+        "7" => {
+            run_part(vec![day7::part1, day7::part2], part);
         }
         _ => {
             println!("Day {} not found", day);
